@@ -1,0 +1,20 @@
+[project]
+name = "MEDLED"
+authors = ["ANTONY antonybroh123@gmail.com"]
+description = "Blockchain for medicine authenticity, prescription tracking, and supply chain"
+license = "MIT"
+
+[contracts.medicine-registry]
+path = "contracts/medicine-registry.clar"
+
+[contracts.prescription-registry]
+path = "contracts/prescription-registry.clar"
+depends_on = ["medicine-registry"]
+
+[contracts.supply-chain]
+path = "contracts/supply-chain.clar"
+depends_on = ["medicine-registry"]
+
+[repl]
+# Optional: pre-load some mock accounts so you can test with them
+costs_version = 2
