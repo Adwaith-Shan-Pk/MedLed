@@ -1,0 +1,13 @@
+{
+  "name": "medicine-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@stacks/network": "^2.0.0",
+    "@stacks/transactions": "^2.0.0",
+    "express": "^4.18.2",
+    "tesseract.js": "^6.0.1"
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Tracker DApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medicine Tracker DApp</h1>
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn btn-primary">Connect Wallet</button>
+                <div id="walletInfo" class="wallet-info hidden">
+                    <span id="walletAddress"></span>
+                    <button id="disconnectWallet" class="btn btn-secondary">Disconnect</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="manufacturer">Manufacturer</button>
+            <button class="tab-button" data-tab="pharmacy">Pharmacy</button>
+            <button class="tab-button" data-tab="doctor">Doctor</button>
+            <button class="tab-button" data-tab="tracker">Tracker</button>
+        </div>
+
+        <!-- Manufacturer Tab -->
+        <div id="manufacturer" class="tab-content active">
+            <h2>Manufacturer Dashboard</h2>
+            
+            <div class="form-section">
+                <h3>Register New Medicine</h3>
+                <form id="registerMedicineForm">
+                    <input type="text" id="medicineName" placeholder="Medicine Name" required>
+                    <input type="text" id="batchNumber" placeholder="Batch Number" required>
+                    <input type="date" id="manufacturingDate" required>
+                    <input type="date" id="expiryDate" required>
+                    <input type="text" id="initialLocation" placeholder="Initial Location" required>
+                    <button type="submit" class="btn btn-primary">Register Medicine</button>
+                </form>
+            </div>
+
+            <div class="form-section">
+                <h3>Update Medicine Location</h3>
+                <form id="updateLocationForm">
+                    <input type="number" id="medIdUpdate" placeholder="Medicine ID" required>
+                    <input type="text" id="newLocation" placeholder="New Location" required>
+                    <select id="newStatus" required>
+                        <option value="">Select Status</option>
+                        <option value="manufactured">Manufactured</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="in-transit">In Transit</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                    <input type="number" id="stepNumber" placeholder="Step Number" required>
+                    <button type="submit" class="btn btn-primary">Update Location</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pharmacy Tab -->
+        <div id="pharmacy" class="tab-content">
+            <h2>Pharmacy Dashboard</h2>
+            
+            <div class="form-section">
+                <h3>Verify Medicine</h3>
+                <form id="verifyMedicineForm">
+                    <input type="number" id="medIdVerify" placeholder="Medicine ID" required>
+                    <button type="submit" class="btn btn-primary">Verify Medicine</button>
+                </form>
+                <div id="verificationResult" class="result-section"></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Validate Prescription</h3>
+                <form id="validatePrescriptionForm">
+                    <input type="number" id="prescriptionIdValidate" placeholder="Prescription ID" required>
+                    <button type="submit" class="btn btn-primary">Validate Prescription</button>
+                </form>
+                <div id="prescriptionValidationResult" class="result-section"></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Use Prescription</h3>
+                <form id="usePrescriptionForm">
+                    <input type="number" id="prescriptionIdUse" placeholder="Prescription ID" required>
+                    <input type="text" id="medicineDispensed" placeholder="Medicine IDs (comma separated)" required>
+                    <button type="submit" class="btn btn-primary">Use Prescription</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Doctor Tab -->
+        <div id="doctor" class="tab-content">
+            <h2>Doctor Dashboard</h2>
+            
+            <div class="form-section">
+                <h3>Add Prescription</h3>
+                <form id="addPrescriptionForm">
+                    <input type="text" id="patientId" placeholder="Patient ID" required>
+                    <input type="text" id="medicineList" placeholder="Medicine IDs (comma separated)" required>
+                    <input type="text" id="prescriptionHash" placeholder="Prescription Hash" required>
+                    <input type="text" id="doctorSignature" placeholder="Doctor Signature" required>
+                    <button type="submit" class="btn btn-primary">Add Prescription</button>
+                </form>
+            </div>
+
+            <div class="form-section">
+                <h3>Check for Fake Prescriptions</h3>
+                <form id="checkFakePrescriptionForm">
+                    <input type="text" id="prescriptionHashCheck" placeholder="Prescription Hash" required>
+                    <button type="submit" class="btn btn-primary">Check for Duplicates</button>
+                </form>
+                <div id="fakeCheckResult" class="result-section"></div>
+            </div>
+        </div>
+
+        <!-- Tracker Tab -->
+        <div id="tracker" class="tab-content">
+            <h2>Medicine Tracker</h2>
+            
+            <div class="form-section">
+                <h3>Track Medicine Route</h3>
+                <form id="trackMedicineForm">
+                    <input type="number" id="medIdTrack" placeholder="Medicine ID" required>
+                    <button type="submit" class="btn btn-primary">Track Medicine</button>
+                </form>
+                <div id="trackingResult" class="result-section"></div>
+            </div>
+
+            <div class="form-section">
+                <h3>Get Medicine Details</h3>
+                <form id="getMedicineForm">
+                    <input type="number" id="medIdDetails" placeholder="Medicine ID" required>
+                    <button type="submit" class="btn btn-primary">Get Details</button>
+                </form>
+                <div id="medicineDetailsResult" class="result-section"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@stacks/connect@7.0.0/dist/umd/index.js"></script>
+    <script src="https://unpkg.com/@stacks/transactions@6.0.0/dist/umd/index.js"></script>
+    <script src="https://unpkg.com/@stacks/network@6.0.0/dist/umd/index.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

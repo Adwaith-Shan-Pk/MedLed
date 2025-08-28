@@ -1,0 +1,18 @@
+{
+  "name": "medicine-tracker-frontend",
+  "version": "1.0.0",
+  "description": "Medicine Tracking DApp Frontend",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 3000",
+    "build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "@stacks/connect": "^7.0.0",
+    "@stacks/transactions": "^6.0.0",
+    "@stacks/network": "^6.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
