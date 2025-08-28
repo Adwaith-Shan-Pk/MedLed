@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@stacks/transactions": "^6.13.1",
+    "@stacks/network": "^6.13.1",
+    "@stacks/auth": "^6.13.1",
+    "@stacks/connect": "^7.8.1",
+    "clarinet": "^2.4.0"
+  }
+}   
