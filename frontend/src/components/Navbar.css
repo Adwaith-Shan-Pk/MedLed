@@ -1,0 +1,36 @@
+/* ... existing navbar styles ... */
+
+.wallet-status {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem; /* Spacing from other links */
+  color: #fff;
+}
+
+.wallet-status span {
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.wallet-button {
+  background-color: #61dafb; /* React blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.wallet-button.connect:hover {
+  background-color: #4fa3d1;
+}
+
+.wallet-button.disconnect {
+  background-color: #f44336; /* Red for disconnect */
+}
+
+.wallet-button.disconnect:hover {
+  background-color: #d32f2f;
+}
