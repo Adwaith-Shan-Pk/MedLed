@@ -1,0 +1,18 @@
+[project]
+name = 'Medled'
+description = ''
+authors = []
+telemetry = true
+cache_dir = './.cache'
+requirements = []
+[contracts."prescription-validator.clar"]
+path = 'contracts/prescription-validator.clar.clar'
+clarity_version = 1
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
