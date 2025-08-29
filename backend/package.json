@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js"
   },
+  
   "dependencies": {
     "@stacks/network": "^6.8.0",
     "@stacks/transactions": "^6.8.0",
